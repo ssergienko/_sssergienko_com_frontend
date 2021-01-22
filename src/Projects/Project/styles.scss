@@ -1,0 +1,30 @@
+@import '../../global.scss';
+
+.project {
+  ul {
+    list-style: none;
+    padding-left: 0;
+    li {
+      margin: 10px 0;
+    }
+  }
+  .row-title {
+    font-weight: $font-weight-bold;
+    margin-right: $indent-xsmall;
+  }
+  p:last-child {
+    margin-bottom: 0;
+  }
+  .slides {
+    img {
+      width: 100%;
+      margin: $indent-small 0;
+    }
+    img:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .links {
+    
+  }
+}

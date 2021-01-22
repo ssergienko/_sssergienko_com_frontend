@@ -1,0 +1,21 @@
+@import '../global.scss';
+
+.footer {
+  color: $white;
+  // height: $footer-height;
+  background-color: $gray;
+  text-align: center;
+  .copyright {
+    font-size: $font-size-small;
+  }
+  .social-networks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    a {
+      color: $white;
+      padding: 0 4px;
+    }
+  }
+}

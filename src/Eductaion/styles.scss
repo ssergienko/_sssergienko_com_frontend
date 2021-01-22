@@ -1,0 +1,19 @@
+@import '../global.scss';
+
+.education {
+  .logo img {
+    width: 100px;
+  }
+  .description {
+    padding: $indent-xsmall $indent-small;
+    .documents {
+      a {
+        text-decoration: underline;
+      }
+    }
+  }
+  p {
+    font-size: $font-size-small;
+    margin-bottom: 14px;
+  }
+}

@@ -1,0 +1,32 @@
+@import '../global.scss';
+
+.header {
+
+  h6 {
+    padding: 24px 0 0;
+    margin-bottom: 0;
+    a {
+      color: $white;
+      &:hover {
+        color: $white;
+        text-decoration: underline;
+      }
+    }
+  }
+
+
+  .topmenu {
+    padding-bottom: 0;
+    &.navbar-dark .navbar-nav .nav-link.active::after {
+      background: $orange none repeat scroll 0 0;
+      content: "";
+      display: block;
+      height: 3px;
+      margin-top: 10px;
+      width: 35%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+}

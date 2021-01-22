@@ -1,0 +1,41 @@
+{
+    "paths": [
+        {
+            "name": "/projects",
+            "lambdaFunction": "sssergienkocomfrontend1f53905d",
+            "privacy": {
+                "protected": true,
+                "auth": [
+                    "/GET"
+                ],
+                "unauth": [
+                    "/GET"
+                ]
+            },
+            "policyResourceName": "/projects"
+        }
+    ],
+    "resourceName": "api3ffd6d4f",
+    "apiName": "api3ffd6d4f",
+    "functionArns": [
+        {
+            "lambdaFunction": "sssergienkocomfrontend1f53905d"
+        }
+    ],
+    "privacy": {
+        "auth": 1,
+        "unauth": 1,
+        "authRoleName": "amplify-amplify026f0a3604f74-staging-140807-authRole",
+        "unAuthRoleName": "amplify-amplify026f0a3604f74-staging-140807-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "sssergienkocomfrontend1f53905d",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}

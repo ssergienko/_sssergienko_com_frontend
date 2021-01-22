@@ -1,0 +1,11 @@
+type Project @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  title: String
+  role: String
+  company: String
+  projectDescription: String
+  location: String
+  description: String
+  created_at: AWSDateTime
+  order: Int
+}

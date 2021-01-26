@@ -1,6 +1,6 @@
 export const ALL_PROJECTS = `
   query listProjects {
-    listProjects(limit: 2) {
+    listProjects(limit: 20) {
       items {
         id
         title
@@ -19,9 +19,3 @@ export const PROJECT_BY_ID = `
       location
     }
   }`;
-
-// export const fullProductQuery = `
-//   query Product(id: id) {
-//     title
-//   }
-// `;

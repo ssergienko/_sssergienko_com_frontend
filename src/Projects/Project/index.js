@@ -24,11 +24,11 @@ const Project = () => {
       {project && 
         <div className="project">
           <ul>
-            <li><span className="row-title">Role:</span>{project.role}</li>
+            {project.role && <li><span className="row-title">Role:</span>{project.role}</li>}
             {project.company && <li><span className="row-title">Company:</span>{project.company}</li>}
-            <li><span className="row-title">Product:</span>{project.projectDescription}</li>
-            <li><span className="row-title">Location:</span>{project.location}</li>
-            <li>
+            {project.projectDescription && <li><span className="row-title">Product:</span>{project.projectDescription}</li>}
+            {project.location && <li><span className="row-title">Location:</span>{project.location}</li>}
+            {project.links?.length > 0 && <li>
               <span className="row-title">Links:</span>
               {/* <span className="links">{project?.links.map((link, index) => 
                 <span className="link">
@@ -37,7 +37,7 @@ const Project = () => {
                 </span>
               )}
               </span> */}
-            </li>
+            </li>}
           </ul>
           <p>{project.description}</p>
           <p className="slides">

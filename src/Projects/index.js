@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import { API, graphqlOperation } from 'aws-amplify';
+import { allProductsQuery } from '../graphql/query';
+
 import './styles.scss';
 import {
   Route,
@@ -17,25 +20,9 @@ class Projects extends Component {
     };
   }
 
-  // componentDidMount() {
-  //   fetch("/api/project")
-  //     .then(response => {
-  //       if (response.status > 400) {
-  //         return this.setState(() => {
-  //           return { placeholder: "Something went wrong!" };
-  //         });
-  //       }
-  //       return response.json();
-  //     })
-  //     .then(projects => {
-  //       this.setState(() => {
-  //         return {
-  //           projectsList: projects,
-  //           loaded: true
-  //         };
-  //       });
-  //     });
-  // }
+  componentDidMount() {
+    const projects = API.graphql(graphqlOperation(allProductsQuery));
+  }
 
   render() {
     return (

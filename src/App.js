@@ -11,7 +11,12 @@ import Contacts from "./Contacts";
 import Education from './Eductaion';
 import Footer from './Footer';
 
+import Amplify, { API, graphqlOperation } from 'aws-amplify';
+import awsconfig from './aws-exports';
+Amplify.configure(awsconfig);
+
 function App() {
+
   return (
     <Router>
         <div className="container-wrapper">

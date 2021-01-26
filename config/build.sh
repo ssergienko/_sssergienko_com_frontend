@@ -6,5 +6,5 @@ then
   npm run build
 else
   echo "BUILD ENV: ${AWS_BRANCH}"
-  echo "Not pushing backend"
+  echo "Not pushing backendd"
 fi

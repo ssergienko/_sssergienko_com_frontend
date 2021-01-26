@@ -8,4 +8,15 @@ type Project @model @auth(rules: [{allow: public}]) {
   description: String
   created_at: AWSDateTime
   order: Int
+  links: [Link] @connection
+}
+
+type Link @model @auth(rules: [{allow: public}]) {
+  text: String
+  link: String
+}
+
+type Images @model @auth(rules: [{allow: public}]) {
+  text: String
+  link: String
 }

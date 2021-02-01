@@ -8,40 +8,41 @@ import { PROJECT_BY_ID } from '../../graphql/query';
 const Project = () => {
 
   const { id } = useParams();
-  const [project, setproject] = React.useState(id);
+  const [currentProject, setCurrentProject] = React.useState(null);
 
   useEffect(() => {
-    getProjectById(project)
-  }, [])
+    getProjectById(id);
+    return () => {};
+  }, [id])
 
   async function getProjectById(projectId) {
     const project = await API.graphql(graphqlOperation(PROJECT_BY_ID, { id: projectId }));
-    setproject(project.data.getProject);
+    setCurrentProject(project.data.getProject);
   }
 
   return (
-      <>
-      {project && 
+    <>
+      {currentProject && 
         <div className="project">
           <ul>
-            {project.role && <li><span className="row-title">Role:</span>{project.role}</li>}
-            {project.company && <li><span className="row-title">Company:</span>{project.company}</li>}
-            {project.projectDescription && <li><span className="row-title">Product:</span>{project.projectDescription}</li>}
-            {project.location && <li><span className="row-title">Location:</span>{project.location}</li>}
-            {project.links?.length > 0 && <li>
+            {currentProject.role && <li><span className="row-title">Role:</span>{currentProject.role}</li>}
+            {currentProject.company && <li><span className="row-title">Company:</span>{currentProject.company}</li>}
+            {currentProject.projectDescription && <li><span className="row-title">Product:</span>{currentProject.projectDescription}</li>}
+            {currentProject.location && <li><span className="row-title">Location:</span>{currentProject.location}</li>}
+            {currentProject.links?.length > 0 && <li>
               <span className="row-title">Links:</span>
-              {/* <span className="links">{project?.links.map((link, index) => 
+              <span className="links">{currentProject?.links.map((link, index) => 
                 <span className="link">
                   <a href={link} target="_blank">Link</a>
-                  {project.links?.length !== index + 1 && <span>, </span>}
+                  {currentProject.links?.length !== index + 1 && <span>, </span>}
                 </span>
               )}
-              </span> */}
+              </span>
             </li>}
           </ul>
-          <p>{project.description}</p>
+          <p>{currentProject.description}</p>
           <p className="slides">
-            {/* {project.images.map((image) => <img src={image.image} key={image.id} />)} */}
+            {/* {currentProject.images.map((image) => <img src={image.image} key={image.id} />)} */}
           </p>
         </div>    
       }

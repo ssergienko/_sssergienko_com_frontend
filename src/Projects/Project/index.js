@@ -16,6 +16,7 @@ const Project = () => {
 
   async function getProjectById(projectId) {
     const project = await API.graphql(graphqlOperation(PROJECT_BY_ID, { id: projectId }));
+    console.log(project);
     setproject(project.data.getProject);
   }
 

@@ -2,15 +2,15 @@
   "providers": [
     "awscloudformation"
   ],
-  "projectName": "sssergienko_com_frontend",
+  "projectName": "ssergienko.com",
   "version": "3.0",
   "frontend": "javascript",
   "javascript": {
     "framework": "react",
     "config": {
       "SourceDir": "src",
-      "DistributionDir": "public",
-      "BuildCommand": "npm start",
+      "DistributionDir": "build",
+      "BuildCommand": "npm run build",
       "StartCommand": "npm start"
     }
   }

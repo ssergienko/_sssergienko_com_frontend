@@ -1,7 +1,5 @@
 {
-  "staging": {
-    "configLevel": "project",
-    "useProfile": false,
-    "awsConfigFilePath": "/Users/ssergienko/.amplify/awscloudformation/sEm0zm3FhV"
-  }
+  "projectPath": "/Users/ssergienko/Library/Mobile Documents/com~apple~CloudDocs/Projects/ss",
+  "envName": "main",
+  "defaultEditor": "vscode"
 }

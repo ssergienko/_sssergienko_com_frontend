@@ -31,13 +31,13 @@ const Project = () => {
             {currentProject.location && <li><span className="row-title">Location:</span>{currentProject.location}</li>}
             {currentProject.links?.length > 0 && <li>
               <span className="row-title">Links:</span>
-              {/* <span className="links">{project?.links.map((link, index) => 
+              <span className="links">{currentProject?.links.map((link, index) => 
                 <span className="link">
                   <a href={link} target="_blank">Link</a>
                   {currentProject.links?.length !== index + 1 && <span>, </span>}
                 </span>
               )}
-              </span> */}
+              </span>
             </li>}
           </ul>
           <p>{currentProject.description}</p>

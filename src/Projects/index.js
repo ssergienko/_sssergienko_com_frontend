@@ -21,7 +21,10 @@ const Projects = () => {
 
   useEffect(() => {
     fetchProjects().then((newProjects) => setProjects(newProjects))
+<<<<<<< HEAD
     console.log(projects);
+=======
+>>>>>>> main
     return () => {};
   }, []);
   

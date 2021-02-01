@@ -9,14 +9,17 @@ type Project @model @auth(rules: [{allow: public}]) {
   created_at: AWSDateTime
   order: Int
   links: [Link] @connection
+  images: [Images] @connection
 }
 
 type Link @model @auth(rules: [{allow: public}]) {
   text: String
   link: String
+  projectId: Int
 }
 
 type Images @model @auth(rules: [{allow: public}]) {
   text: String
   link: String
+  projectId: Int
 }

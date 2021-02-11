@@ -17,10 +17,10 @@ class Home extends Component {
         <div className="row">
           <div className="sidebar col-sm-12 col-md-2">
             <div>
-              <img className="avatar" src="https://s3.amazonaws.com/ssergienko.com/images/myself.png" />
+              <img className="avatar" src="https://s3.amazonaws.com/ssergienko.com/images/myself.png" alt="Sergei Sergienko PM" />
             </div>
             <div className="download-cv-link">
-              <a href="https://s3.amazonaws.com/ssergienko.com/images/SergeySSergienko.pdf" target="_blank">Download CV</a>
+              <a href="https://s3.amazonaws.com/ssergienko.com/images/SergeySSergienko.pdf" target="_blank" rel="noopener noreferrer">Download CV</a>
             </div>
           </div>
           <div className="homepage-content col-sm-12 col-md-10">
@@ -72,7 +72,7 @@ class Home extends Component {
                 {this.state.customers.map(customer => {
                   return (
                     <div key={customer.id} className="customer">
-                      <img src={customer.logo} />
+                      <img src={customer.logo} alt="Sergei Sergienko PM" />
                     </div>
                   );
                 })}

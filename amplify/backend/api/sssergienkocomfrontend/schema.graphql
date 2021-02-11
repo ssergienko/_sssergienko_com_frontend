@@ -13,13 +13,38 @@ type Project @model @auth(rules: [{allow: public}]) {
 }
 
 type Link @model @auth(rules: [{allow: public}]) {
+  id: ID!
   text: String
   link: String
   projectId: Int
 }
 
 type Images @model @auth(rules: [{allow: public}]) {
+  id: ID!
   text: String
   link: String
   projectId: Int
+}
+
+type Educations @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  categoryId: Int
+  title: String
+  finishedAt: String
+  description: String
+  order: Int
+  logo: String
+  documents: [EducationDocument]
+}
+
+type EducationCategories @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  title: String
+}
+
+type EducationDocument @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  title: String
+  document: String
+  educationId: ID!
 }

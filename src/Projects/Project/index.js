@@ -19,7 +19,7 @@ const Project = () => {
     const project = await API.graphql(graphqlOperation(PROJECT_BY_ID, { id: projectId }));
     const images = await API.graphql(graphqlOperation(PROJECT_IMAGES, { projectId: projectId }));
     const links = await API.graphql(graphqlOperation(PROJECT_LINKS, { projectId: projectId }));
-    project.data.getProject.images = images.data.listImagess.items || [];
+    project.data.getProject.images = images.data.listImagess.items.sort((a, b) => a.id - b.id) || [];
     project.data.getProject.links = links.data.listLinks.items || [];
     setCurrentProject(project.data.getProject);
   }

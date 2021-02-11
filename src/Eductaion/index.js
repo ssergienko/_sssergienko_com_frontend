@@ -25,10 +25,10 @@ const Eductaion = () => {
     <div className="education">
       {educations?.length > 0 && educations.map((education) => {
         return (
-          <>
-            <div className="row" key={education.id}>
+          <div key={education.id}>
+            <div className="row">
               <div className="logo col-md-1 col-sm-12">
-                <img src={education.logo} />
+                <img src={education.logo} alt="Sergei Sergienko PM" />
               </div>
               <div className="description col-md-11 col-sm-12">
                 <h6>{education.title}</h6>
@@ -36,17 +36,17 @@ const Eductaion = () => {
                 <p className="documents">
                   {education.documents?.length > 0 && education.documents.map((document, index) => {
                     return (
-                      <>
-                        <a href={document.document} target="_blank">{document.title}</a>
+                      <span key={document.id}>
+                        <a href={document.document} target="_blank" rel="noopener noreferrer">{document.title}</a>
                         {education.documents.length > 1 && education.documents.length - 1 !== index && ` / `}
-                      </> )
+                      </span> )
                   })}
                 </p>
               </div>
               <div className="logo col-md-1 col-sm-12">{document.finishedAt}</div>
             </div>
             <hr />
-          </>
+          </div>
         )})
       }
     </div>

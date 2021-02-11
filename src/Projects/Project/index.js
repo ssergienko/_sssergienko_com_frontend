@@ -37,7 +37,7 @@ const Project = () => {
               <span className="row-title">Links:</span>
               <span className="links">{currentProject?.links.map((link, index) => 
                 <span className="link" key={link.id}>
-                  <a href={link.link} target="_blank">{link.text}</a>
+                  <a href={link.link} target="_blank" rel="noopener noreferrer">{link.text}</a>
                   {currentProject.links?.length !== index + 1 && <span>, </span>}
                 </span>
               )}
@@ -46,7 +46,7 @@ const Project = () => {
           </ul>
           <p>{currentProject.description}</p>
           <p className="slides">
-            {currentProject.images?.length > 0 && currentProject.images.map((image) => <img src={image.link} key={image.id} />)}
+            {currentProject.images?.length > 0 && currentProject.images.map((image) => <img src={image.link} key={image.id} alt="Sergei Sergienko PM" />)}
           </p>
         </div>    
       }

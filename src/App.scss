@@ -11,6 +11,11 @@ p, ul li {
 nav a {
   font-size: $font-size-normal;
 }
+
+#root {
+  height: inherit;
+}
+
 .container-wrapper {
   min-height: 100%;
   margin-bottom: -$footer-height;

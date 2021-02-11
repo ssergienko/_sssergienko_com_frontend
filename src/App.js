@@ -20,28 +20,28 @@ function App() {
 
   return (
     <Router>
-        <div className="container-wrapper">
-          <Header />
-          <div className="container-fluid page">
-            <Switch>
-              <Route path="/projects">
-                <Projects />
-              </Route>
-              <Route path="/education">
-                <Education />
-              </Route>
-              <Route path="/contacts">
-                <Contacts />
-              </Route>
-              <Route path="/">
-                <Home />
-              </Route>
-            </Switch>
-          </div>
-          <div className="push"></div>
+      <div className="container-wrapper">
+        <Header />
+        <div className="container-fluid page">
+          <Switch>
+            <Route path="/projects">
+              <Projects />
+            </Route>
+            <Route path="/education">
+              <Education />
+            </Route>
+            <Route path="/contacts">
+              <Contacts />
+            </Route>
+            <Route path="/">
+              <Home />
+            </Route>
+          </Switch>
         </div>
-        <Footer />
-      </Router>
+        <div className="push"></div>
+      </div>
+      <Footer />
+    </Router>
   );
 }
 

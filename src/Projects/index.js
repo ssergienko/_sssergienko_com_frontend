@@ -12,7 +12,7 @@ import Project from './Project';
 
 async function fetchProjects() {
   const projectsData = await API.graphql(graphqlOperation(ALL_PROJECTS));
-  return projectsData.data.listProjects.items;
+  return projectsData.data.listProjects.items.sort((a, b) => a.order - b.order);
 }
 
 const Projects = () => {

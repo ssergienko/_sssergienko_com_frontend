@@ -4,6 +4,7 @@ export const ALL_PROJECTS = `
       items {
         id
         title
+        order
       }
     }
   }`;
@@ -26,7 +27,18 @@ export const PROJECT_IMAGES = `
       items {
         id
         link
-        projectId
+        text
+      }
+    }
+  }
+`;
+
+export const PROJECT_LINKS = `
+  query getLinks($projectId: Int) {
+    listLinks(filter: {projectId: {eq: $projectId}}) {
+      items {
+        id
+        link
         text
       }
     }

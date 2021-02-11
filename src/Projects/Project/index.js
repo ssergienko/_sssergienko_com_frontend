@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import './styles.scss';
 import { withRouter } from "react-router";
 import { API, graphqlOperation } from 'aws-amplify';
-import { PROJECT_BY_ID, PROJECT_IMAGES } from '../../graphql/query';
+import { PROJECT_BY_ID, PROJECT_IMAGES, PROJECT_LINKS } from '../../graphql/query';
 
 const Project = () => {
 
@@ -17,13 +17,11 @@ const Project = () => {
 
   async function getProjectById(projectId) {
     const project = await API.graphql(graphqlOperation(PROJECT_BY_ID, { id: projectId }));
-    getProjectImages(projectId);
+    const images = await API.graphql(graphqlOperation(PROJECT_IMAGES, { projectId: projectId }));
+    const links = await API.graphql(graphqlOperation(PROJECT_LINKS, { projectId: projectId }));
+    project.data.getProject.images = images.data.listImagess.items || [];
+    project.data.getProject.links = links.data.listLinks.items || [];
     setCurrentProject(project.data.getProject);
-  }
-  async function getProjectImages(projectId) {
-    const images = await API.graphql(graphqlOperation(PROJECT_IMAGES, { projectId: 3 }));
-    console.log(images);
-    //setCurrentProject(project.data.getProject);
   }
 
   return (
@@ -38,8 +36,8 @@ const Project = () => {
             {currentProject.links?.length > 0 && <li>
               <span className="row-title">Links:</span>
               <span className="links">{currentProject?.links.map((link, index) => 
-                <span className="link">
-                  <a href={link} target="_blank">Link</a>
+                <span className="link" key={link.id}>
+                  <a href={link.link} target="_blank">{link.text}</a>
                   {currentProject.links?.length !== index + 1 && <span>, </span>}
                 </span>
               )}
@@ -48,7 +46,7 @@ const Project = () => {
           </ul>
           <p>{currentProject.description}</p>
           <p className="slides">
-            {/* {currentProject.images.map((image) => <img src={image.image} key={image.id} />)} */}
+            {currentProject.images?.length > 0 && currentProject.images.map((image) => <img src={image.link} key={image.id} />)}
           </p>
         </div>    
       }

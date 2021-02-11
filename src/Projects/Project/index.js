@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import './styles.scss';
 import { withRouter } from "react-router";
 import { API, graphqlOperation } from 'aws-amplify';
-import { PROJECT_BY_ID } from '../../graphql/query';
+import { PROJECT_BY_ID, PROJECT_IMAGES } from '../../graphql/query';
 
 const Project = () => {
 
@@ -17,7 +17,13 @@ const Project = () => {
 
   async function getProjectById(projectId) {
     const project = await API.graphql(graphqlOperation(PROJECT_BY_ID, { id: projectId }));
+    getProjectImages(projectId);
     setCurrentProject(project.data.getProject);
+  }
+  async function getProjectImages(projectId) {
+    const images = await API.graphql(graphqlOperation(PROJECT_IMAGES, { projectId: 3 }));
+    console.log(images);
+    //setCurrentProject(project.data.getProject);
   }
 
   return (

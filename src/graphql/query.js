@@ -19,3 +19,16 @@ export const PROJECT_BY_ID = `
       location
     }
   }`;
+
+export const PROJECT_IMAGES = `
+  query getImages($projectId: Int) {
+    listImagess(filter: {projectId: {eq: $projectId}}) {
+      items {
+        id
+        link
+        projectId
+        text
+      }
+    }
+  }
+`;

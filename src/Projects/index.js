@@ -20,9 +20,12 @@ const Projects = () => {
   const [projects, setProjects] = React.useState([]);
 
   useEffect(() => {
-    fetchProjects().then((newProjects) => setProjects(newProjects))
+    console.log(projects.length);
+    if(!projects.length) {
+      fetchProjects().then((newProjects) => setProjects(newProjects))
+    }
     return () => {};
-  }, []);
+  }, [projects]);
   
   return (
     <div className="projects-content-wrapper">

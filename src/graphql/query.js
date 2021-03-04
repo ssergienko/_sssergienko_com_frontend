@@ -5,9 +5,31 @@ export const ALL_PROJECTS = `
         id
         title
         order
+        role
+        company
+        projectDescription
+        location
+        images {
+          id
+          link
+          text
+        }
       }
     }
   }`;
+
+/*
+links {
+  id
+  link
+  text
+}
+images {
+  id
+  link
+  text
+}
+*/
 
 export const PROJECT_BY_ID = `
   query getProject($id: ID!) {

@@ -5,6 +5,11 @@ export const ALL_PROJECTS = `
         id
         title
         order
+        images {
+          id
+          link
+          text
+        }
       }
     }
   }`;

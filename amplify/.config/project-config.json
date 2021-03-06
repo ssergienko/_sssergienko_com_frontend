@@ -2,7 +2,7 @@
   "providers": [
     "awscloudformation"
   ],
-  "projectName": "ssergienko.com",
+  "projectName": "ssergienkocom",
   "version": "3.0",
   "frontend": "javascript",
   "javascript": {
